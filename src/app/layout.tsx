@@ -16,6 +16,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Navigation />
         <main className="max-w-3xl mx-auto px-6 py-24">
           {children}
+          <Analytics />
         </main>
       </body>
     </html>
