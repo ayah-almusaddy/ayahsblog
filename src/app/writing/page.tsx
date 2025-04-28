@@ -21,12 +21,19 @@ export default function WritingPage() {
 
         {/* Writing list */}
         <div className="space-y-3">
+          
           <Link href="/writing/hello" className="block text-base text-gray-800 underline underline-offset-2 hover:text-gray-500">
             Hello
           </Link>
+
           <Link href="/writing/mbti" className="block text-base text-gray-800 underline underline-offset-2 hover:text-gray-500">
             Taking every MBTI test so you don't have to
           </Link>
+
+          <Link href="/writing/reinvention" className="block text-base text-gray-800 underline underline-offset-2 hover:text-gray-500">
+            What constitues reinvention?
+          </Link>
+
         </div>
       </div>
     </section>

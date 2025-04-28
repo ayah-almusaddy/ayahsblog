@@ -1,6 +1,7 @@
 // app/layout.tsx
 import "./globals.css";
 import { ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/react"
 import Navigation from "./components/nav";
 
 export const metadata = {
