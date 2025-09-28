@@ -1,31 +1,89 @@
+/* Tailwind v4: load all layers */
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* ===== your site styles ===== */
 
 :root {
-  --font-body: 'Literata', serif;
-  --color-bg: #fafaf9;
-  --color-text: #1c1c1c;
-  --color-muted: #888;
+    --bg: #FEFBFE;
+    --ink: #2b233a;
+    --accent: #7e22ce;
+    /* purple(700) */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+    background: var(--bg);
 }
 
 body {
-  font-family: var(--font-body);
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-size: 16px;
-  line-height: 1.7;
+    color: var(--ink);
+}
+
+/* Hand-drawn underline */
+.u-squiggle {
+    background-image:
+        linear-gradient(transparent 70%, rgba(126, 34, 206, .18) 0),
+        radial-gradient(circle at 1px 8px, var(--accent) 2px, transparent 2px);
+    background-size: 100% 1.1em, 8px 8px;
+    background-repeat: no-repeat, repeat-x;
+    background-position: 0 .1em, 0 100%;
+}
+
+/* Postage / scallop frame (pure CSS) */
+.postage {
+    position: relative;
+    border-radius: 18px;
+    background: white;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .04), 0 6px 18px rgba(0, 0, 0, .06);
+}
+
+.postage::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    --c: var(--accent);
+    --r: 11px;
+    background: radial-gradient(circle var(--r), transparent 74%, var(--c) 75% 98%, transparent 99%) left top/25px 25px repeat;
+    border-radius: 26px;
+    filter: drop-shadow(0 0 0 var(--c));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 12px;
+}
+
+/* Photo edge */
+.photo-edge {
+    filter: contrast(1.1) saturate(1.02);
+}
+
+.photo-edge::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(90deg, rgba(0, 0, 0, .14) 0 1px, transparent 1px 3px),
+        repeating-linear-gradient(0deg, rgba(0, 0, 0, .08) 0 1px, transparent 1px 4px);
+    mix-blend-mode: multiply;
+    opacity: .08;
+    border-radius: 10px;
+}
+
+/* Utilities composed via @apply (use built-in purple scale, not custom ‘grape’) */
+.link-arrow {
+    @apply inline-flex items-center gap-1 font-medium text-purple-800 hover:text-purple-600 transition-colors;
+}
+
+.navlink {
+    @apply relative px-2 py-1 rounded-md;
+}
+
+.navlink[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: 2px;
+    height: 2px;
+    background: var(--accent);
 }

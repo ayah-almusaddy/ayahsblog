@@ -1,23 +1,33 @@
-// app/layout.tsx
+// === src/app/layout.tsx ===
 import "./globals.css";
 import { ReactNode } from "react";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 import Navigation from "./components/nav";
+import { Inter, Lora } from "next/font/google";
+
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const lora = Lora({ subsets: ["latin"], variable: "--font-lora" });
+
 
 export const metadata = {
-  title: "ayah's blog",
-  description: "a writing blog",
+title: "ayah — writing & projects",
+description: "A little corner for my writing, notes, and projects.",
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+
+// app/layout.tsx
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        <Navigation />
-        <main className="max-w-3xl mx-auto px-6 py-24">
-          {children}
-          <Analytics />
-        </main>
+      <body
+        suppressHydrationWarning
+        className={`${inter.variable} ${lora.variable} bg-[var(--bg)] min-h-screen`}
+      >
+        <header className="sticky top-0 z-40 bg-[var(--bg)]/80 backdrop-blur border-b border-black/5">
+          <Navigation />
+        </header>
+        <main className="mx-auto max-w-6xl py-10">{children}</main>
       </body>
     </html>
   );

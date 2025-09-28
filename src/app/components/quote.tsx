@@ -1,11 +1,37 @@
+import QuoteFrame from "./quote_frame";
+import { inriaSerif, inriaSans } from "../fonts";
+
 export default function Quote() {
   return (
-    <section className="text-center py-12">
-      <h1 className="text-3xl font-bold text-gray-800">quote of the day</h1>
-      <blockquote className="mt-6 text-xl italic text-gray-800">
-        {`" Well, if that's suffering, he thinks, let me suffer. Yes. To love whoever I have left. And if ever I lose someone, let me descend into a futile and prolonged rage, yes, despair, wanting to break things, furniture, appliances, wanting to get into fights, to scream, to walk in front of a bus, yes. Let me suffer, please. To love just these few people, to know myself capable of that, I would suffer every day of my life."`}
-      </blockquote>
-      <footer className="mt-2 text-gray-600">- Sally Rooney</footer>
-    </section>
+    <QuoteFrame
+      className=""
+      stroke="#852E92"
+      viewBox="0 0 514 818"
+      padding={55}
+    >
+      <div className="flex h-full flex-col justify-between">
+        {/* Title */}
+        <p
+          className={`${inriaSerif.className} text-4xl text-center mb-5`}
+          style={{ color: "#731082" }}
+        >
+          Quote of the Day
+        </p>
+
+        {/* Quote text */}
+        <blockquote
+          className={`${inriaSans.className} text-lg text-black text-center`}
+        >
+          “Cats and humans have been partners for over ten thousand years. And what you realize when you’ve lived with a cat for a long time is that we may think we own them, but that’s not the way it is. They simply allow us the pleasure of their company”
+        </blockquote>
+
+        {/* Author */}
+        <p
+          className={`${inriaSans.className} mt-4 text-sm text-black italic font-light text-right`}
+        >
+         - Genki Kawamura 
+        </p>
+      </div>
+    </QuoteFrame>
   );
 }
