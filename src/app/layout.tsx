@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="sticky top-0 z-40 bg-[var(--bg)]/80 backdrop-blur border-b border-black/5">
           <Navigation />
         </header>
-        <main className="mx-auto max-w-6xl px-6 md:px-10 py-10">{children}</main>
+        <main className="mx-auto max-w-6xl py-10">{children}</main>
       </body>
     </html>
   );
