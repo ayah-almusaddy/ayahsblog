@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Quote from "./components/quote";
 import MyselfFrame from "./components/myself_frame";
+import { inriaSerif, inriaSans } from "./fonts";
 
 export default function Home() {
   return (
@@ -11,23 +12,29 @@ export default function Home() {
       </aside>
 
       <section className="lg:col-start-2 lg:row-start-1 self-stretch">
-        <h1 className="font-serif text-5xl md:text-5xl text-grape-700 leading-tight mb-2">
+        <h1 className={`${inriaSerif.className} text-6xl mb-3 font-bold`}
+          style={{ color: "#731082" }}>
           AYAH ALMUSADDY
         </h1>
 
-        <p className="max-w-2xl text-lg text-gray-800">
+        <p className={`${inriaSans.className} max-w-2xl text-lg`}
+          style={{ color: "#731082" }}>
           A little corner of the internet I’ve carved out for my writing pieces
           and a way to show off my technical projects and skills.
         </p>
 
-        <Link href="/about" className="link-arrow mt-4 inline-block">
+        <Link
+          href="/about"
+          className={`${inriaSans.className} link-arrow mt-4 inline-block font-bold text-lg italic`}
+          style={{ color: "#731082" }}
+        >
           Learn about me →
         </Link>
 
         <MyselfFrame
           className="mt-10"
           stroke="#731082"
-          viewBox="0 0 920 510" 
+          viewBox="0 0 920 510"
           padding={70}
         >
           {/* inner dotted outline (manual, not SVG) */}

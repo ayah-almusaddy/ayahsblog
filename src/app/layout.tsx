@@ -11,8 +11,7 @@ const lora = Lora({ subsets: ["latin"], variable: "--font-lora" });
 
 
 export const metadata = {
-title: "ayah — writing & projects",
-description: "A little corner for my writing, notes, and projects.",
+title: "ayah's blog",
 };
 
 
