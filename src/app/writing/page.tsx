@@ -17,6 +17,10 @@ export default function WritingPage() {
         {/* Writing list */}
         <div className="space-y-3">
 
+          <Link href="/writing/intermezzo" className="block text-base text-gray-800 underline underline-offset-2 hover:text-gray-500">
+            Intermezzo Review - Notes & Quotes
+          </Link>
+
           <Link href="/writing/reinvention" className="block text-base text-gray-800 underline underline-offset-2 hover:text-gray-500">
             What constitues reinvention?
           </Link>
