@@ -1,6 +1,5 @@
-// src/app/intermezzo/page.tsx
+// src/app/myfriends/page.tsx
 import React from "react";
-
 
 export default function MyFriendsReview() {
     return (
@@ -13,7 +12,7 @@ export default function MyFriendsReview() {
 
                 <h2 className="text-xl font-semibold">Review</h2>
                 <p className="text-gray-700 leading-relaxed">
-                    Another Backman novel, another couple of hours spent crying. I genuinely did not think I could find a book that topped <i>Anxious People</i> by Backman, but he has outdone himself with this one. This novel, a story about friendship and art, a story that has summed up all the experiences of human nature, has touched within me a part of my soul I didn’t even know existed. It’s very rare to find an author whose writing style clicks - Backman does that for me.
+                    Another Backman novel, another couple of hours spent crying. I genuinely did not think I could find a book that topped <em>Anxious People</em> by Backman, but he has outdone himself with this one. This novel, a story about friendship and art, a story that has summed up all the experiences of human nature, has touched within me a part of my soul I didn’t even know existed. It’s very rare to find an author whose writing style clicks - Backman does that for me.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">
@@ -77,7 +76,7 @@ export default function MyFriendsReview() {
                         <li>“It’s so easy to be a critic, any coward can do that. But art doesn’t need critics, art has enough enemies already. Art needs friends.” pg 194</li>
                         <li>“Great art is a small break from human despair” pg 195</li>
                         <li>“Nature gains nothing from unhappy children, yet they are still walking around everywhere, without the words to describe their anxiety.” pg 197</li>
-                        <li>“It was a desperate joke on Joar’s part, because really he was trying to say: <i>You’re not giving us enough oxygen, we’re suffocating without your laughter.</i>” pg 197</li>
+                        <li>“It was a desperate joke on Joar’s part, because really he was trying to say: <em>You’re not giving us enough oxygen, we’re suffocating without your laughter.</em>” pg 197</li>
                         <li>“It doesn’t take any strength at all to crush someone’s self-confidence if you know where to stomp.” pg 202</li>
                         <li>“Babies teach us not to be scared of death. That’s how we realize we can’t wish for eternal life. Because if no one died, we would have to ban new people from being born. And when the playgrounds are empty, when the last pair of rain boots has been grown out of, when the last puddle has been jumped in … What would we want eternity for then, Ted?” pg 206 </li>
                         <li>“The janitor looked ashamed at that, sometimes you don’t appreciate your own blessings until you see the envy in someone else.” pg 211</li>

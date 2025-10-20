@@ -16,7 +16,7 @@ export default function WritingPage() {
 
         {/* Writing list */}
         <div className="space-y-3">
-          <Link href="/writing/my-friends" className="block text-base text-gray-800 underline underline-offset-2 hover:text-gray-500">
+          <Link href="/writing/myfriends" className="block text-base text-gray-800 underline underline-offset-2 hover:text-gray-500">
             My Friends by Fredrik Backman
           </Link>
 
