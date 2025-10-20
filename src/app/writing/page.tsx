@@ -16,9 +16,12 @@ export default function WritingPage() {
 
         {/* Writing list */}
         <div className="space-y-3">
+          <Link href="/writing/my-friends" className="block text-base text-gray-800 underline underline-offset-2 hover:text-gray-500">
+            My Friends by Fredrik Backman
+          </Link>
 
           <Link href="/writing/intermezzo" className="block text-base text-gray-800 underline underline-offset-2 hover:text-gray-500">
-            Intermezzo Review - Notes & Quotes
+            Intermezzo by Sally Rooney
           </Link>
 
           <Link href="/writing/reinvention" className="block text-base text-gray-800 underline underline-offset-2 hover:text-gray-500">

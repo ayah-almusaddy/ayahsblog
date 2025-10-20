@@ -7,16 +7,16 @@ import { inriaSerif, inriaSans } from "../fonts";
 type QuoteItem = { text: string; author: string };
 
 const QUOTES: QuoteItem[] = [
-  { text: "To care so much. Grief does that.", author: "Sally Rooney",},
-  { text: "Yes, the world makes room for goodness and decency, he thinks: and the task of life is to show goodness to others, not to complain about their failings.", author: "Sally Rooney" },
-  { text: "And what if life is just a collection of essentially unrelated experiences? Why does one thing have to follow meaningfully from another?", author: "Sally Rooney" },
-  { text: "The ability to read awoke inside of me some long dormant craving to be mentally alive.", author: "Malcolm X" },
-  { text: "Forgive me, for all the things I did but mostly for the ones that I did not.", author: "Donna Tartt" },
-  { text: "“We think we have many desires, but in fact we have only one. What is it?” “To live,” said Camilla. “To live forever,”", author: "Donna Tartt" },
-  { text: "A society has no chance of success if its women are uneducated.", author: "Khaled Hosseini" },
-  { text: "Sometimes, immersed in his books, there would come to him the awareness of all that he did not know, of all that he had not read; and the serenity for which he labored was shattered as he realized the little time he had in life to read so much, to learn what he had to know.", author: "John Williams" },
-  { text: "If my life is going to mean anything, I have to live it myself.", author: "Rick Riordan" },
-  { text: "You must learn some of my philosophy. Think only of the past as its remembrance gives you pleasure.", author: "Jane Austen" },
+  { text: "Art doesn’t require training, dear child, art just needs friends.”", author: "Fredrik Backman",},
+  { text: "Disappointment is a powerful thing. Used correctly, it is stronger than fear, more terrible than physical pain, if you see it in the eyes of the one you love, you’ll do almost anything to make it stop", author: "Fredrik Backman" },
+  { text: "It’s a funny thing. The person we fall in love with, we hardly ever call by their name. Because it’s somehow just so obvious that it’s you that I’m talking to, that it’s you I’m always thinking of. Who else?", author: "Fredrik Backman" },
+  { text: "The world is full of miracles, but none greater than how far a young person can be carried by someone else’s belief in them.", author: "Fredrik Backman" },
+  { text: "It’s so easy to be a critic, any coward can do that. But art doesn’t need critics, art has enough enemies already. Art needs friends.", author: "Fredrik Backman" },
+  { text: "Act out being alive, like a play. And after a while, a long while, it will be true.", author: "John Steinbeck" },
+  { text: "A man who can't bear to share his habits is a man who needs to quit them.", author: "Stephen King" },
+  { text: "‘I wanted you to see what real courage is, instead of getting the idea that courage is a man with a gun in his hand. It's when you know you're licked before you begin but you begin anyway and you see it through no matter what. You rarely win, but sometimes you do. Mrs. Dubose won, all ninety-eight pounds of her. According to her views, she died beholden to nothing and nobody. She was the bravest person I ever knew.’", author: "Harper Lee" },
+  { text: "Humans need fantasy to be human. To be the place where the falling angel meets the rising ape.", author: "Terry Pratchett" },
+  { text: "He who controls the past controls the future. He who controls the present controls the past.", author: "George Orwell" },
 ];
 
 // Day-of-year helper (local time)
