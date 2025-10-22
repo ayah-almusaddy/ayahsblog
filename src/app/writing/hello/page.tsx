@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+export const revalidate = 3600;
 export default function HelloPost() {
   return (
     <section className="space-y-5 flex justify-center">
