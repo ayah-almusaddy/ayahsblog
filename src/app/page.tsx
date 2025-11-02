@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Quote from "./components/quote";
 import MyselfFrame from "./components/myself_frame";
+import Flower from "./components/flower";
+import SmallFlower from "./components/flower2";
 import { inriaSerif, inriaSans } from "./fonts";
 
 export default function Home() {
@@ -20,7 +22,7 @@ export default function Home() {
         <p className={`${inriaSans.className} max-w-2xl text-lg`}
           style={{ color: "#731082" }}>
           A little corner of the internet I’ve carved out for my writing pieces
-          and a way to show off my technical projects and skills.
+          and anything else that interests me.
         </p>
 
         <Link
@@ -43,11 +45,15 @@ export default function Home() {
             style={{ inset: 20, borderColor: "#731082" }}
           />
 
+          <Flower aria-hidden="true" className=" absolute -left-42  -bottom-30" />
+
+          <SmallFlower aria-hidden="true" className=" absolute -right-27 -top-27" />
+
           {/* your photo/content */}
           <div className="relative h-[min(60vw,300px)] ">
             <Image
-              src="/me.png"
-              alt="Ayah holding a cake at night"
+              src="/me2.png"
+              alt="me reading a book"
               fill
               className="object-cover rounded-md"
               priority
