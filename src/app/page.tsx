@@ -4,23 +4,43 @@ import Quote from "./components/quote";
 import MyselfFrame from "./components/myself_frame";
 import Flower from "./components/flower";
 import SmallFlower from "./components/flower2";
+import ScrollFrame from "./components/scroll";
+import Todo from "./components/todo"; // make sure this exists
 import { inriaSerif, inriaSans } from "./fonts";
+import { WRITINGS } from "@/lib/writing"; // import writings from writing page
+
+function formatDate(iso: string) {
+  return new Date(iso + "T00:00:00").toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+}
 
 export default function Home() {
+  const recent = [...WRITINGS]
+    .sort((a, b) => b.id - a.id) // or sort by date if you prefer
+    .slice(0, 3);
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[1.4fr,1fr] xl:grid-cols-[500px,1fr] gap-10 lg:gap-16 items-start">
+      {/* LEFT: quote */}
       <aside className="lg:col-start-1 lg:row-start-1 self-stretch flex">
         <Quote />
       </aside>
 
+      {/* RIGHT: intro + photo frame */}
       <section className="lg:col-start-2 lg:row-start-1 self-stretch">
-        <h1 className={`${inriaSerif.className} text-6xl mb-3 font-bold`}
-          style={{ color: "#731082" }}>
+        <h1
+          className={`${inriaSerif.className} text-6xl mb-3 font-bold`}
+          style={{ color: "#731082" }}
+        >
           AYAH ALMUSADDY
         </h1>
 
-        <p className={`${inriaSans.className} max-w-2xl text-lg`}
-          style={{ color: "#731082" }}>
+        <p
+          className={`${inriaSans.className} max-w-2xl text-lg`}
+          style={{ color: "#731082" }}
+        >
           A little corner of the internet I’ve carved out for my writing pieces
           and anything else that interests me.
         </p>
@@ -45,12 +65,11 @@ export default function Home() {
             style={{ inset: 20, borderColor: "#731082" }}
           />
 
-          <Flower aria-hidden="true" className=" absolute -left-42  -bottom-30" />
-
-          <SmallFlower aria-hidden="true" className=" absolute -right-27 -top-27" />
+          <Flower aria-hidden="true" className="absolute -left-42 -bottom-30" />
+          <SmallFlower aria-hidden="true" className="absolute -right-27 -top-27" />
 
           {/* your photo/content */}
-          <div className="relative h-[min(60vw,300px)] ">
+          <div className="relative h-[min(60vw,300px)]">
             <Image
               src="/me2.png"
               alt="me reading a book"
@@ -61,6 +80,45 @@ export default function Home() {
           </div>
         </MyselfFrame>
       </section>
+
+      {/* BOTTOM ROW: scroll + todo */}
+      <section className="lg:col-span-2 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-16 items-start">
+          <div className="md:col-span-3">
+            <ScrollFrame>
+              <div className="space-y-3">
+                <ul className="space-y-2">
+                  {recent.map((w) => (
+                    <li key={w.id} className="flex items-baseline justify-between gap-4">
+                      <Link
+                        href={w.href}
+                        className="text-gray-800 underline underline-offset-2 hover:text-gray-500"
+                      >
+                        {w.title}
+                      </Link>
+                      <span className="text-sm text-gray-500 tabular-nums shrink-0">
+                        {formatDate(w.date)}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollFrame>
+          </div>
+          <div className="md:col-span-2">
+            <Todo className="w-full scale-[1.05] origin-top" stroke="#731082" padding={90}>
+              <ul className={`${inriaSans.className} list-disc pl-6 space-y-3 text-gray-800`}>
+                <li>Make recent writing + website to dos content prettier</li>
+                <li>redesign the writing page (maybe add some drawings)</li>
+                <li>unfortunately write an About Me</li>
+                <li>figure out why analytics isnt working rn</li>
+              </ul>
+            </Todo>
+
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
