@@ -6,7 +6,7 @@ import Flower from "./components/flower";
 import SmallFlower from "./components/flower2";
 import ScrollFrame from "./components/scroll";
 import Todo from "./components/todo"; // make sure this exists
-import { inriaSerif, inriaSans } from "./fonts";
+import { inriaSerif, inriaSans, kaiseiTokumin } from "./fonts";
 import { WRITINGS } from "@/lib/writing"; // import writings from writing page
 
 function formatDate(iso: string) {
@@ -86,33 +86,32 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-16 items-start">
           <div className="md:col-span-3">
             <ScrollFrame>
-              <div className="space-y-3">
-                <ul className="space-y-2">
-                  {recent.map((w) => (
-                    <li key={w.id} className="flex items-baseline justify-between gap-4">
-                      <Link
-                        href={w.href}
-                        className="text-gray-800 underline underline-offset-2 hover:text-gray-500"
-                      >
-                        {w.title}
-                      </Link>
-                      <span className="text-sm text-gray-500 tabular-nums shrink-0">
-                        {formatDate(w.date)}
-                      </span>
-                    </li>
-                  ))}
+              <div className={` ${kaiseiTokumin.className} space-y-3 tracking-[0.10em] text-[20px] text-gray-900 text-center`} >
+                <ul className="space-y-3">
+                  {recent.map((w) => ( <li key={w.id} className="" >
+                      <Link href={w.href} className="hover:opacity-60 transition-opacity">
+                        -- {w.title} --
+                      </Link> </li> ))}
                 </ul>
               </div>
             </ScrollFrame>
           </div>
           <div className="md:col-span-2">
-            <Todo className="w-full scale-[1.05] origin-top" stroke="#731082" padding={90}>
-              <ul className={`${inriaSans.className} list-disc pl-6 space-y-3 text-gray-800`}>
-                <li>Make recent writing + website to dos content prettier</li>
-                <li>redesign the writing page (maybe add some drawings)</li>
-                <li>unfortunately write an About Me</li>
-                <li>figure out why analytics isnt working rn</li>
-              </ul>
+            <Todo
+              className="w-full scale-[1.05] origin-top"
+              stroke="#731082"
+              padding={70}
+            >
+              <div className="translate-y-7">
+                <ul
+                  className={`${inriaSans.className} list-disc pl-2 space-y-3 text-gray-800`}
+                >
+                  <li>redesign the writing page (maybe add some drawings)</li>
+                  <li>unfortunately write an About Me</li>
+                  <li>figure out why analytics isnt working rn</li>
+                  <li>figure out the sizing on other technologies</li>
+                </ul>
+              </div>
             </Todo>
 
           </div>
