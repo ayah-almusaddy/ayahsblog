@@ -15,7 +15,7 @@ export default function AboutPage() {
 
 		<p>{`The home page was beautifully designed by the genius, spectacular Abigail Jensen.`}</p>
 
-		<p>{`All writing is done by me, unless quoted or cited. I am disgusted by AI replacing creativity, so unless I'm doing some strange social experiment, nothing will be written with AI (except code of the website).`}</p>
+		<p>{`All writing is done by me, unless quoted or cited. Nothing is written with AI.`}</p>
 
 		</div>
 		</section>
