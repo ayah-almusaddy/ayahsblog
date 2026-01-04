@@ -1,4 +1,4 @@
-// src/app/myfriends/page.tsx
+// src/app/bravenewworld/page.tsx
 export const dynamic = 'force-static';
 export const revalidate = 3600;
 import React from "react";
