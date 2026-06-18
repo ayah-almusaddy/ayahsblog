@@ -6,6 +6,7 @@ type WritingItem = {
 };
 
 const WRITINGS: WritingItem[] = [
+  { id: 108, title: "Euthyphro's Dilemma: Morality and God", href: "/writing/euthyphro", date: "2026-06-17" },
   { id: 107, title: "1984 by George Orwell", href: "/writing/1984", date: "2026-01-04" },
   { id: 106, title: "Brave New World by Aldous Huxley", href: "/writing/bravenewworld", date: "2025-12-16" },
   { id: 105, title: "My Friends by Fredrik Backman", href: "/writing/myfriends", date: "2025-10-20" },
