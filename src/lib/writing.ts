@@ -12,7 +12,5 @@ const WRITINGS: WritingItem[] = [
   { id: 105, title: "My Friends by Fredrik Backman", href: "/writing/myfriends", date: "2025-10-20" },
   { id: 104, title: "Intermezzo by Sally Rooney", href: "/writing/intermezzo", date: "2025-10-01" },
   { id: 103, title: "What constitues reinvention?", href: "/writing/reinvention", date: "2025-05-02" },
-  { id: 102, title: "Hello", href: "/writing/hello", date: "2025-04-22" },
-  { id: 101, title: "Taking every MBTI test so you don't have to", href: "/writing/mbti", date: "2025-01-30" },
 ];
 export { WRITINGS };

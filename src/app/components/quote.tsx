@@ -1,22 +1,28 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import QuoteFrame from "./quote_frame";
-import { inriaSerif, inriaSans } from "../fonts";
 
 type QuoteItem = { text: string; author: string };
 
 const QUOTES: QuoteItem[] = [
-  { text: "Art doesn’t require training, dear child, art just needs friends.”", author: "Fredrik Backman",},
-  { text: "Disappointment is a powerful thing. Used correctly, it is stronger than fear, more terrible than physical pain, if you see it in the eyes of the one you love, you’ll do almost anything to make it stop", author: "Fredrik Backman" },
-  { text: "It’s a funny thing. The person we fall in love with, we hardly ever call by their name. Because it’s somehow just so obvious that it’s you that I’m talking to, that it’s you I’m always thinking of. Who else?", author: "Fredrik Backman" },
-  { text: "The world is full of miracles, but none greater than how far a young person can be carried by someone else’s belief in them.", author: "Fredrik Backman" },
-  { text: "It’s so easy to be a critic, any coward can do that. But art doesn’t need critics, art has enough enemies already. Art needs friends.", author: "Fredrik Backman" },
+  { text: "And I guess a man’s importance in the world can be measured by the quality and number of his glories. It is a lonely thing but it relates us to the world. It is the mother of all creativeness, and it sets each man separate from all other men.", author: "John Steinbeck" },
+  { text: "And this I believe: that the free, exploring mind of the individual human is the most valuable thing in the world. And this I would fight for: the freedom of the mind to take any direction it wishes, undirected. And this I must fight against: any idea, religion, or government which limits or destroys the individual", author: "John Steinbeck" },
+  { text: "It would be absurd if we did not understand both angels and devils, since we invented them.", author: "John Steinbeck" },
+  { text: "He had an idea that even when beaten he could steal a little victory by laughing at defeat.", author: "John Steinbeck" },
+  { text: "No story has power, nor will it last, unless we feel in ourselves that it is true and true of us. What a great burden of guilt men have", author: "John Steinbeck" },
+  { text: "We have only one story. All novels, all poetry, are built on the never-ending contest in ourselves of good and evil. And it occurs to me that evil must constantly respawn, while good, while virtue, is immortal. Vice has always a new fresh young face, while virtue is venerable as nothing else in the world is.", author: "John Steinbeck" },
   { text: "Act out being alive, like a play. And after a while, a long while, it will be true.", author: "John Steinbeck" },
-  { text: "A man who can't bear to share his habits is a man who needs to quit them.", author: "Stephen King" },
-  { text: "‘I wanted you to see what real courage is, instead of getting the idea that courage is a man with a gun in his hand. It's when you know you're licked before you begin but you begin anyway and you see it through no matter what. You rarely win, but sometimes you do. Mrs. Dubose won, all ninety-eight pounds of her. According to her views, she died beholden to nothing and nobody. She was the bravest person I ever knew.’", author: "Harper Lee" },
-  { text: "Humans need fantasy to be human. To be the place where the falling angel meets the rising ape.", author: "Terry Pratchett" },
-  { text: "He who controls the past controls the future. He who controls the present controls the past.", author: "George Orwell" },
+  { text: "'And I feel that I am a man. And I feel that a man is a very important thing – maybe more important than a star. That is not theology. I have no bent toward gods. But I have a new love for that glittering instrument, the human soul. It is a lovely and unique thing in the universe. It is always attacked and never destroyed – because 'Thou mayest'", author: "John Steinbeck" },
+  { text: "Humans are caught – in their lives, in their thoughts, in their hungers and ambitions, in their avarice and cruelty, and in their kindness and generosity too – in a net of good and evil. I think this is the only story we have and that it occurs on all levels of feeling and intelligence. Virtue and vice were warp and woof of our first consciousness, and they will be the fabric of our last, and this despite any changes we may impose on field and river and mountain, on economy and manners. There is no other story. A man, after he has brushed off the dust and chips of his life, will have left only the hard, clean questions: Was it good or was it evil? Have I done well – or ill?", author: "John Steinbeck" },
+  { text: "Perhaps the best conversationalist in the world is the man who helps others to talk.", author: "John Steinbeck" },
+  { text: "And now that you don’t have to be perfect, you can be good.", author: "John Steinbeck" },
+  { text: "It’s a beautiful thing, the destruction of words.", author: "George Orwell" },
+  {text: "Rebellion meant a look in the eyes, an inflection of the voice; at the most, an occasional whispered word.", author: "George Orwell"},
+  {text: "Freedom is the freedom to say that two plus two makes four. If that is granted, all else follows.", author: "George Orwell"},
+  {text:"Perhaps it was only when people were near the starvation level that they had anything to sing about.", author: "George Orwell"},
+  {text:"If one is to rule and to continue ruling, one must be able to dislocate the sense of reality.", author: "George Orwell"},
+  {text:"Perhaps one did not want to be loved so much as to be understood.", author: "George Orwell"}
+
 ];
 
 // Day-of-year helper (local time)
@@ -35,18 +41,15 @@ function msUntilNextMidnight(now = new Date()) {
 }
 
 export default function Quote() {
-  // Force a re-render at midnight by bumping this date
   const [today, setToday] = useState<Date>(() => new Date());
 
   useEffect(() => {
-    // Update at the upcoming midnight, then every 24h
     let timeoutId: ReturnType<typeof setTimeout> | null = null;
     let intervalId: ReturnType<typeof setInterval> | null = null;
 
     function schedule() {
       timeoutId = setTimeout(() => {
         setToday(new Date());
-        // After the first tick, update every 24 hours
         intervalId = setInterval(() => setToday(new Date()), 24 * 60 * 60 * 1000);
       }, msUntilNextMidnight());
     }
@@ -59,32 +62,19 @@ export default function Quote() {
     };
   }, []);
 
-  // Deterministic daily pick (changes with the date, not page refresh)
   const quote = useMemo(() => {
     const index = dayOfYear(today) % QUOTES.length;
     return QUOTES[index];
   }, [today]);
 
   return (
-    <QuoteFrame className="" stroke="#852E92" viewBox="0 0 514 818" padding={55}>
-      <div className="flex h-full flex-col justify-between">
-        <p
-          className={`${inriaSerif.className} text-4xl text-center mb-5`}
-          style={{ color: "#731082" }}
-        >
-          Quote of the Day
-        </p>
-
-        <blockquote className={`${inriaSans.className} text-lg text-black text-center`}>
-          “{quote.text}”
-        </blockquote>
-
-        <p
-          className={`${inriaSans.className} mt-4 text-sm text-black italic font-light text-right`}
-        >
-          — {quote.author}
-        </p>
-      </div>
-    </QuoteFrame>
+    <div className="space-y-3">
+      <blockquote className="text-lg text-gray-800 leading-relaxed">
+        “{quote.text}”
+      </blockquote>
+      <p className="text-base text-gray-500">
+        — {quote.author}
+      </p>
+    </div>
   );
 }
