@@ -19,7 +19,7 @@ export default function WritingPage() {
   );
 
   return (
-    <section className="space-y-5 flex justify-center">
+    <section className="space-y-5 flex justify-center px-6 md:px-8">
       <div className="max-w-prose w-full space-y-5">
         <h1 className="text-3xl font-semibold text-gray-800">writing pieces</h1>
 
