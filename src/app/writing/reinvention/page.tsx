@@ -2,7 +2,7 @@ export const dynamic = 'force-static';
 export const revalidate = 3600;
 export default function ReinventionPost() {
   return (
-    <section className="space-y-5 flex justify-center">
+    <section className="space-y-5 flex justify-center px-4 md:px-8 py-4">
       <div className="max-w-prose w-full space-y-5">
         <h1 className="text-2xl font-medium text-gray-800">What constitutes reinvention?</h1>
         <p>{`The notion of reinventing yourself is a popular phenomenon amongst our capitalistic society. How to become better. How to glow up. How to make more money. Here’s what these millionaires aren’t telling you.  15 ways to completely change your life.`}</p>

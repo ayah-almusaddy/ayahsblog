@@ -2,7 +2,7 @@ export const dynamic = 'force-static';
 export const revalidate = 3600;
 export default function HelloPost() {
   return (
-    <section className="space-y-5 flex justify-center">
+    <section className="space-y-5 flex justify-center px-4 md:px-8 py-4">
       <div className="max-w-prose w-full space-y-5">
         <h1 className="text-2xl font-medium text-gray-800">Hello</h1>
         <p>{`This is my first ever post on my website. I wanted to take the time to introduce myself to those who are curious. My name is Ayah Almusaddy and I'm not exactly sure how to describe myself but I will do my best.`}</p>

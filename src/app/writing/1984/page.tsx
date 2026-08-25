@@ -5,7 +5,7 @@ import React from "react";
 
 export default function nineteeneightyfour() {
     return (
-        <section className="space-y-3 flex justify-center">
+        <section className="space-y-3 flex justify-center px-4 md:px-8 py-4">
             <div className="max-w-prose w-full space-y-5">
                 <h1 className="text-2xl font-medium text-gray-800">1984 by George Orwell: Review & Quotes</h1>
 
