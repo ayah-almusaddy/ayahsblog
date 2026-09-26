@@ -6,7 +6,8 @@ type WritingItem = {
 };
 
 const WRITINGS: WritingItem[] = [
-  {id: 110, title: "AI slop in the pores of my brain", href: "/writing/ai-slop", date: "2026-08-25" },
+  { id: 111, title: "East of Eden by John Steinbeck", href: "/writing/eastofeden", date: "2026-09-26" },
+  { id: 110, title: "AI slop in the pores of my brain", href: "/writing/ai-slop", date: "2026-08-25" },
   {id: 109, title: "It's Ok to Hate Software Engineering", href: "/writing/software-engineering", date: "2026-08-19" },
   { id: 108, title: "Euthyphro's Dilemma: Morality and God", href: "/writing/euthyphro", date: "2026-06-17" },
   { id: 107, title: "1984 by George Orwell", href: "/writing/1984", date: "2026-01-04" },
